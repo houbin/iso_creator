@@ -20,10 +20,10 @@ then
 else
 	cp redis-3.0.5.tar.gz ${WORK_DIR}
 	cd ${WORK_DIR}
-	tar -xzf redis-3.0.5.tar.gz 2>&1 >> ${LOG_FILE}
+	tar -xzf redis-3.0.5.tar.gz > /dev/null 2>&1
 	cd redis-3.0.5
-	make -j 8 2>&1 >> ${LOG_FILE}
-	make install 2>&1 >> ${LOG_FILE}
+	make -j 8 1>/dev/null
+	make install 1>/dev/null
 	echo -e "\n\n\n\n\n\n" | ./utils/install_server.sh
 
 	# add passwd

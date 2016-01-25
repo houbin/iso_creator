@@ -17,6 +17,7 @@ fi
 
 # generate my own tar bar
 cd ${SHELL_DIR}
+cd ..
 tar -czf ${CREATE_ISO_DIR}/features.tar.gz features/
 
 # regenerate repo file

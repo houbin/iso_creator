@@ -205,3 +205,4 @@ yum-metadata-parser
 yum-plugin-fastestmirror
 zlib
 yum-utils
+monit

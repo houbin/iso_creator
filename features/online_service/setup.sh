@@ -61,7 +61,7 @@ cp -f conf/* ${CONFIG_DIR}/
 
 echo
 echo
-echo "上线服务程序已经放在${WORK_DIR}目录下，请在启动上线服务前，修改${CONFIG_DIR}下的配置文件"
+echo "提示：上线服务程序已经放在${WORK_DIR}目录下，请在启动上线服务前，修改${CONFIG_DIR}下的配置文件"
 echo
 echo
 
