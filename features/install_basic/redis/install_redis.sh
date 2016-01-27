@@ -31,5 +31,7 @@ else
 	echo "redis安装成功，且redis密码已经设置为Jovision.123"
 fi
 
+service redis_6379 start
+
 exit
 
