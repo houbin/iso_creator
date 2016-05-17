@@ -26,7 +26,7 @@ else
 	rm -rf ${CREATE_ISO_DIR}/*
 fi
 
-# cp all stuff to create iso dir
+# cp all stuff except Packages to create iso dir
 cd ${CDROM_DIR}
 ls -a ${CDROM_DIR}/ | grep -v -E "Packages|^\.$|^\.\.$" | xargs -i cp -rf {} ${CREATE_ISO_DIR}/
 ${SHELL_DIR}/cp_packages.sh ${CREATE_ISO_DIR}
@@ -35,6 +35,13 @@ if [ $? -ne 0 ];
 then
 	echo "$? cp_package.sh return error"
 	exit 1
+fi
+
+# cp especial rpms
+MY_RPMS_DIR=/tmp/my_rpms
+if [ -d ${MY_RPMS_DIR} ];
+then
+    cp -rf ${MY_RPMS_DIR}/* ${CREATE_ISO_DIR}/Packages/
 fi
 
 # copy custom config file

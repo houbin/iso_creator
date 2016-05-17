@@ -1,7 +1,12 @@
-由于定制iso时，许多文件都比较大，这里都删掉了，如果需要重新定制ISO，需要将centos dvd中相应的文件拷贝回来。
-需要拷贝回来的文件有：
-1，isolinux/initrd.img
-2. isolinux/vmlinuz
-3. Packages中需要使用的安装包，可以使用shell/cp_packages.sh脚本重新拷贝
-4. images目录
-5. repodata目录
+## centos iso定制
+
+## centos version supported
+- centos 6.*
+- centos 7
+
+## steps
+1. 挂载对应版本的Centos DVD ISO到/mnt/cdrom，所有文件都从该目录拷贝
+2. 若DVD ISO中没有需要的rpm包，将需要的包拷贝到/tmp/my_rpms，该目录中的包会自动拷贝
+3. 修改shell/ks.cfg文件，将所需要的rpm名称放到packages段的末尾
+4. 执行shell/rebuild_iso.sh, 则会在iso_create的上层目录生成定制的ISO
+
